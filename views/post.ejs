@@ -26,6 +26,9 @@
         </div>
         <p> <%= blogPost.body %> </p>
     </section>
+    <form action="/delete/<%=blogPost.id%>" method="POST">
+    <input type="submit" value="Delete">
+    </form>
     <%- include('./partials/next.ejs')  %>
     <%- include('./partials/footer.ejs')  %> 
 </body>

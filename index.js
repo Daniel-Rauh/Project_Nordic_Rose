@@ -42,5 +42,16 @@ app.post('/new', (req, res) => {
     fs.writeFile('./data.json', jsonData, () => {
         console.log("I have written")
     })
-    res.redirect('/')
+    res.status(201).redirect('/')
+})
+app.post('/delete/:id', (req, res) => {
+    data.splice(req.params.id, 1)
+    for (let i = 0; i < data.length; i++) {
+        data[i].id = i
+    }
+    let jsonData = JSON.stringify(data)
+    fs.writeFile('./data.json', jsonData, () => {
+        console.log("I have written")
+    })
+    res.status(200).redirect('/')
 })
