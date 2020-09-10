@@ -1,7 +1,30 @@
 <nav>
     <a href="/"><img src="/logo.png" alt=""></a>
-    <ul>
-        <li><a href="/" <%if(active=="index"){%>class="active"<%}%>>ALL</a></li>
-        <li><a href="/newArticle" <%if(active=="new"){%>class="active"<%}%>>NEW ARTICLE</a></li>
+    <ul class="big">
+        <li><a href="/" <%if(active=="index"){%>class="active" <%}%>>ALL</a></li>
+        <li><a href="/newArticle" <%if(active=="new"){%>class="active" <%}%>>NEW ARTICLE</a></li>
     </ul>
+    <article class="hamburger" onclick="showNav()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </article>
+    <article id="mobile-nav">
+        <ul>
+            <li><a href="/" <%if(active=="index"){%>class="active" <%}%>>ALL</a></li>
+            <li><a href="/newArticle" <%if(active=="new"){%>class="active" <%}%>>NEW ARTICLE</a></li>
+        </ul>
+    </article>
+    <script>
+        let nav = document.getElementById("mobile-nav")
+        let counter = 0
+        function showNav() {
+                counter++
+                if (counter%2 == 1) {
+                    nav.style.right = "0"
+                } else {
+                    nav.style.right = "-100%"
+                }
+            }
+    </script>
 </nav>

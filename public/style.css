@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    overflow-x: hidden;
+}
 nav{
     box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.16);
     display: flex;
@@ -24,7 +27,7 @@ ul{
 li{
     display: inline;
 }
-nav ul li{
+.big li{
     margin-left: 80px;
 }
 a{
@@ -44,6 +47,51 @@ a:hover{
     position: absolute;
     bottom: -23px;
     left: 0;
+}
+.hamburger{
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 2;
+    right: -5%;
+}
+nav div{
+    width: 25px;
+    height: 3px;
+    background: #000;
+    position: absolute;
+    right: 3px;
+}
+nav div:nth-of-type(1){
+    top: 10px;
+}
+nav div:nth-of-type(2){
+    top: 15px;
+}
+nav div:nth-of-type(3){
+    top: 20px;
+}
+#mobile-nav{
+    /* display: none; */
+    position: absolute;
+    height: 100vh;
+    width: 70%;
+    right: -100%;
+    top: 0;
+    background: #fff;
+    border-left: 1px solid rgba(0, 0, 0, 0.16);
+    transition: right 1s;
+}
+#mobile-nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+#mobile-nav ul li a{
+    font-size: 3rem;
 }
 #first{
     padding-top: 100px;
@@ -291,3 +339,17 @@ textarea{
     border: none;
     border-radius: 5px;
 }
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+    nav img{
+        width: 150px;
+    }
+    .big{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+    }
+    .next-grid{
+        display: block;
+    }
+    }
