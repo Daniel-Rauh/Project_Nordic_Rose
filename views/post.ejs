@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs', {active: "none"}) %>
+    <section id="post">
+        <h1><%= blogPost.title %> </h1>
+        <img src=<%= blogPost.url %> alt="">
+        <div class="bottom">
+            <img src=<%= blogPost.author_bild %> alt="">
+            <h3><%= blogPost.author.toUpperCase() %></h3>
+            <div class="twitter">
+                <div></div>
+                <div>
+                    <img src='/twitter.png' alt="">
+                </div>
+            </div>
+            <h4><%= blogPost.published_at %> - <%= blogPost.duration %> min read</h4>
+        </div>
+        <p> <%= blogPost.body %> </p>
+    </section>
+    <%- include('./partials/next.ejs')  %>
+    <%- include('./partials/footer.ejs')  %> 
+</body>
+
+</html>

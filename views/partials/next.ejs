@@ -1,0 +1,23 @@
+<section id="next">
+    <div class="eye"><div class="ball"></div></div>
+    <div class="eye"><div class="ball"></div></div>
+    <h2>What to read next</h2>
+    <div class="next-grid">
+        <% let rndArr = []
+            while (rndArr.length < 6) {
+                let num = Math.floor(Math.random() * data.length)
+                if (!rndArr.includes(num) && num != 0) {
+                    rndArr.push(num)
+                }
+            }
+        %> 
+        <% for( let i = 0; i < 6; i++ ) { %>
+            <div>
+                <a href="/post/<%=data[rndArr[i]].id%>"><img src=<%= data[rndArr[i]].url %> alt=""></a>
+                <a href="/post/<%=data[rndArr[i]].id%>">
+                    <p><%= data[rndArr[i]].title %> </p>
+                </a>
+            </div>
+        <% } %>
+    </div>
+</section>

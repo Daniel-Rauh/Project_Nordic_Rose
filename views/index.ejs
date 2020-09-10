@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs', {active: "index"}) %>
+    <article id="first">
+        <a href="/post/<%=data[0].id%>"><img src=<%= data[0].url %> alt=""></a>
+        <a href="/post/<%=data[0].id%>">
+            <h1><%= data[0].title %> </h1>
+        </a>
+    </article>
+    <section id="all-posts">
+        <article class="posts">
+            <h2>All articles</h2>
+            <div class="grid">
+                <% for( let i = 1; i < data.length; i++ ) { %>
+                <div>
+                    <a href="/post/<%=data[i].id%>"><img src=<%= data[i].url %> alt=""></a>
+                    <a href="/post/<%=data[i].id%>">
+                        <p><%= data[i].title %> </p>
+                    </a>
+                </div>
+                <% } %>
+            </div>
+        </article>
+    </section>
+    <%- include('./partials/footer.ejs')  %> 
+</body>
+
+</html>

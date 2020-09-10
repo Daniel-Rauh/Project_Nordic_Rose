@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs', {active: "new"}) %>
+    <section id="new">
+        <h2>ADD NEW ARTICLE</h2>
+        <div class="bar"></div>
+        <form action="/new" method="POST">
+            <input type="text" name="title" id="" placeholder="Title">
+            <input type="text" name="url" id="" placeholder="Url Picture">
+            <input type="text" name="author" id="" placeholder="Author">
+            <input type="text" name="author_bild" id="" placeholder="Author Picture">
+            <textarea name="body" id="" cols="30" rows="10" placeholder="Write your article here..."></textarea>
+            <input type="submit" value="Send Article">
+        </form>
+    </section>
+    <%- include('./partials/next') %> 
+    <%- include('./partials/footer.ejs')  %> 
+</body>
+
+</html>
